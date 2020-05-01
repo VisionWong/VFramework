@@ -6,7 +6,7 @@ namespace VFramework
     /// <summary>
     /// 全局事件中心，销毁时记得移除监听
     /// </summary>
-    public class MessageCenter : MonoSingleton<MessageCenter>
+    public class MessageCenter : Singleton<MessageCenter>
     {
         /// <summary>
         /// 事件表

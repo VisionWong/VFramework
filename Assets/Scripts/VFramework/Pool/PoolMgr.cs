@@ -8,7 +8,7 @@ namespace VFramework
     /// <summary>
     /// GameObject缓存池
     /// </summary>
-	public class PoolMgr : MonoSingleton<PoolMgr>
+	public class PoolMgr : Singleton<PoolMgr>
 	{
         private Dictionary<string, PoolData> _poolDict = new Dictionary<string, PoolData>();
 

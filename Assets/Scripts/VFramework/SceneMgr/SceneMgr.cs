@@ -9,7 +9,7 @@ namespace VFramework
     /// <summary>
     /// 场景管理器，负责同步异步加载场景
     /// </summary>
-	public class SceneMgr : MonoSingleton<SceneMgr>
+	public class SceneMgr : Singleton<SceneMgr>
 	{
         /// <summary>
         /// 同步加载场景，加载完后执行fun
@@ -29,7 +29,7 @@ namespace VFramework
         /// <param name="callback"></param>
         public void LoadSceneAsync(string name, Action callback)
         {
-            StartCoroutine(ReallyLoadSceneAsync(name, callback));          
+            MonoMgr.Instance.StartCoroutine(ReallyLoadSceneAsync(name, callback));          
         }
 
         private IEnumerator ReallyLoadSceneAsync(string name, Action callback)

@@ -5,7 +5,6 @@ using VFramework;
 
 public class PoolTest : MonoBehaviour
 {
-    // Update is called once per frame
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

@@ -6,7 +6,7 @@ namespace VFramework
     /// <summary>
     /// 资源加载管理器，AB包的尚未完善
     /// </summary>
-	public class ResourceMgr : MonoSingleton<ResourceMgr>
+	public class ResourceMgr : Singleton<ResourceMgr>
 	{
         /// <summary>
         /// 同步加载资源，若为GameObject，则实例化后返回
@@ -30,7 +30,7 @@ namespace VFramework
         /// </summary>
         public void LoadAsync<T>(string path, System.Action<T> callback = null) where T : Object
         {
-            StartCoroutine(ReallyLoadAsync(path, callback));
+            MonoMgr.Instance.StartCoroutine(ReallyLoadAsync(path, callback));
         }
 
         private IEnumerator ReallyLoadAsync<T>(string path, System.Action<T> callback) where T : Object
