@@ -9,6 +9,10 @@ namespace VFramework
     /// </summary>
 	public enum MessageType
     {
-        MonsterDead,
+        OnKeyDown,
+        OnKeyUp,
+        OnSceneLoading,
+        //Test
+        MonsterDead
     }
 }
