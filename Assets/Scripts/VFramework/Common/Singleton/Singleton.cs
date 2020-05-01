@@ -32,10 +32,7 @@ namespace VFramework
             }
             Init();
 	    }
-	
-	    public virtual void Init()
-        {
 
-        }
+        public virtual void Init() { }
 	}
 }
