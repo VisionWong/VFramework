@@ -37,7 +37,8 @@ namespace VFramework
             AsyncOperation ao = SceneManager.LoadSceneAsync(name);
             while (!ao.isDone)
             {
-                //可通过消息中心发布事件，使得外界能够获取progress
+                //通过消息中心发布事件，使得外界能够获取progress
+                MessageCenter.Instance.Broadcast(MessageType.OnSceneLoading, ao.progress);
                 yield return ao.progress;
             }
             callback?.Invoke();
