@@ -30,7 +30,13 @@ namespace VFramework
             }
         }
 
-        protected MonoSingleton() { }
+        protected MonoSingleton()
+        {
+            if (_instance != null)
+            {
+                throw new SingletonException(string.Format("This {0} Singleton Instance is not null!", typeof(T).ToString()));
+            }
+        }
 
         private void OnApplicationQuit()
         {
